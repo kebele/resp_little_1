@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+.banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* ekranı dikey iki parçay böler */
+}
+.banner .box{
+    position: relative;
+    height: 100vh;
+    background: cornflowerblue;
+}
+.banner .box:last-child{
+    background: orange;
+}
+header{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    position: relative;
+    font-size: 1.5em;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
+header ul{
+    display: flex;
+    /* yanyana koysun, biraz içiçede geçer */
+}
+header ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+header ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+header ul li a:hover{
+    color: orange;
+    letter-spacing: 2px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* centerın centeri */
+    padding: 60px;
+}
+.content h2{
+    font-size: 4em;
+    color: black;
+}
+.content p{
+    font-size: 1.1em;
+    color: black;
+    line-height: 1.8em;
+}
+.btn{
+    display: inline-block;
+    font-size: 1.1em;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid black;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+.btn:hover{
+    background: orange;
+    color: blue;
+    letter-spacing: 2px;
+}
+.sci{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 30px;
+    right: 60px;
+}
+.sci h3{
+    font-weight: 500;
+    color: orange;
+    letter-spacing: 1px;
+}
+.sci li{
+    list-style: none;
+    margin-left: 20px;
+}
+.sci li img{
+    max-width: 30px;
+    /* resmin boyutunu ayarlama */
+}
+.images{
+    display: flex;
+    flex-wrap: wrap;
+}
+.images .imgBx{
+    /*  1. resmmin genişliği ve yüksekliği div in yarısı kadar olacak */
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    background: green;
+}
+.images .imgBx:nth-child(2){
+    background: blue;
+}
+/* 3. resmin genişliği div'in tamamı olacak */
+.images .imgBx:nth-child(3){
+    width: 100%;
+    background: yellow;
+}
+.images .imgBx img{
+    /* resimleri kendi divleri içine yerleştirme */
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* responsive yapma */
+@media (max-width: 991px)
+{
+    .banner{
+        grid-template-columns: 1fr;
+    }
+    header{
+        padding: 20px 40px;
+    }
+    .content{
+        padding: 40px;   
+    }
+    .banner .box.content{
+        height: 70vh;
+    }
+    .banner .box.images{
+        height: auto;
+    }
+}
+@media (max-width: 600px)
+{
+    .content h2{
+        font-size: 3em;
+    }
+    .images .imgBx{
+        width: 100%;
+        height: 40vh;
+    }
+}
